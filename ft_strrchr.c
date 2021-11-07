@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:54:22 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 14:32:05 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/07 16:54:58 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strrchr(const char *s, int c)
 }
 int main()
 {
-	char *s = "Chlat";
+	char *s = "Chocolat";
 	int c = 'o';
 
 	printf("%s\n", ft_strrchr(s, c));

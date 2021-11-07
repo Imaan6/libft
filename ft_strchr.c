@@ -6,30 +6,31 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 21:05:42 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 14:55:34 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/07 17:05:01 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 char	*ft_strchr(const char *s, int c)
 {
-	char *ret;
+	unsigned char *ret;
+	int i;
 
-	ret = NULL;
-	while(s)
+	i = 0;
+	ret = (unsigned char *)s;
+	while(ret[i])
 	{
-		if(*s == c)
+		if(ret[i] == (unsigned char)c)
 		{
-			ret = (char *)s;
-			return (ret);
+			return ((char*)&ret[i]);
 		}
-		s++;
+		i++;
 	}
-	return (ret);
+	return (0);
 }
 int main()
 {
-	char *s = "nji";
+	char *s = "naaaaaapaan";
 	int c = 'a';
 
 	printf("%s\n", ft_strchr(s, c));
