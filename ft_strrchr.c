@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:54:22 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 16:54:58 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/07 20:49:09 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 			s++;
 	}
 	return (ret);
-}
+}/*
 int main()
 {
 	char *s = "Chocolat";
@@ -35,4 +35,4 @@ int main()
 
 	printf("%s\n", ft_strrchr(s, c));
 	printf("%s\n", strrchr(s, c));
-}
+}*/
