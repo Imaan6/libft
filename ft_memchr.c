@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 21:02:56 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 21:31:41 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/07 21:51:59 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	int c = 'a';
 
 	printf("%s\n",ft_memchr(s,c,1));
+
 	printf("%s\n", memchr(s,c,1));
+
+	TO BE CONTINUED
 }*/
