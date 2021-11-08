@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 21:02:56 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/08 13:47:49 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/11/08 15:02:40 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/11/08 15:10:02 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char *p;
-
-	p = (unsigned char *)s;
-	while(p && n > 0)
-	{
-		if(*p == (unsigned char)c)
-			return (p);
-		p++;
-		n--;
-	}
-	return NULL;
-}/*
-int main()
-{
-	char *s = "imanae";
-	int c = 'a';
-
-	printf("%s\n",ft_memchr(s,c,5));
-
-	printf("%s\n", memchr(s,c,5));
-}*/
+	
+}
