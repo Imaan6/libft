@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 12:09:35 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/09 12:26:59 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/11/09 17:19:38 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/11/09 21:03:18 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_atoi(const char *str)
+#include <stdlib.h>
+void	*ft_calloc(size_t count, size_t size)
 {
-	int sign;
-	int	res;
-	int i;
-
-	sign = 1;
-	res =  0;
-	i = 0;
-	while(str[i] == ' ' || (str[i] > 8 && str[i] < 14 ))
-		i++;
-	if (str[i] == '-'  || str[i] == '+')
+	void	*p;
+	
+	p = malloc(count * size);
+	if(p != NULL)
 	{
-		if(str[i] == '-')
-			sign = -1;
-		i++;
+		ft_bzero(p, count * size);
 	}
-	while(str[i] >= '0' && str[i] <= '9' && str[i])
-	{
-		res = res * 10 - (str[i] - 48);
-		i++;
-	}
-	return (res * sign);
-}
+	return (p);
+}/*
+int main()
+{
+	char *p;
+	char *c;
+	p = ft_calloc(2,sizeof(char));
+	c = calloc(2, sizeof(char));
+	p = "imane";
+	c = "imane";
+	printf("%s\n",p);
+	printf("%s\n",c);
+	
+}*/
