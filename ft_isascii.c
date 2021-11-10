@@ -6,14 +6,14 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:15:07 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 12:17:58 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/10 13:28:40 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 int	ft_isascii(int c)
 {
-	if( c >= 0 && c <= 255)
+	if( c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

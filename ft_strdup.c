@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:07:23 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/09 21:08:34 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/10 13:49:48 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(char *s1)
 	{
 		i++;
 	}
-	dup = malloc((i + 1) * sizeof (char *));
+	dup = malloc((i + 1) * sizeof (char));
 	if (dup == 0)
 		return (0);
 	dup[i + 1] = '\0';

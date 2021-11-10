@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:54:22 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 20:49:09 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:32:07 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	ret = NULL;
 	while(*s)
 	{
-		if(*s == c)
+		if(*s == (char)c)
 		{
 			ret = (char*) s;
 			s++;
@@ -26,13 +26,15 @@ char	*ft_strrchr(const char *s, int c)
 		else
 			s++;
 	}
+	if(*s == c)
+		return (char*)(s);
 	return (ret);
-}/*
-int main()
+}
+/*int main()
 {
-	char *s = "Chocolat";
-	int c = 'o';
+	char *s = "pChocolat";
+	int c = 'p';
 
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
+	printf("%s\n", ft_strrchr(s, c + 256));
+	printf("%s\n", strrchr(s, c + 256));
 }*/
