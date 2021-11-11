@@ -6,20 +6,20 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:15:13 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 12:17:54 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:58:37 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 int	ft_isalpha(int c)
 {
-	if(c > 64 && c < 91)
+	if (c > 64 && c < 91)
 		return (1);
 	else if (c > 96 && c < 123)
 		return (2);
 	else
 		return (0);
-}/*
+}
+/*
 int main()
 {
 	int	c;

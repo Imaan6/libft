@@ -6,12 +6,13 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:03:16 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 12:18:30 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:14:27 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcpy(char * dst, const char * src, size_t dstsize)
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	src_size;

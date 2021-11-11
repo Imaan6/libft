@@ -6,25 +6,27 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 21:02:56 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/08 13:47:49 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:40:11 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
-	while(p && n > 0)
+	while (p && n > 0)
 	{
-		if(*p == (unsigned char)c)
+		if (*p == (unsigned char)c)
 			return (p);
 		p++;
 		n--;
 	}
-	return NULL;
-}/*
+	return (NULL);
+}
+/*
 int main()
 {
 	char *s = "imanae";

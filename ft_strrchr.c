@@ -6,28 +6,29 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 10:54:22 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/10 14:32:07 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:23:00 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char *ret;
+	char	*ret;
 
 	ret = NULL;
-	while(*s)
+	while (*s)
 	{
-		if(*s == (char)c)
+		if (*s == (char)c)
 		{
-			ret = (char*) s;
+			ret = (char *) s;
 			s++;
 		}
 		else
 			s++;
 	}
-	if(*s == c)
-		return (char*)(s);
+	if (*s == c)
+		return ((char *)(s));
 	return (ret);
 }
 /*int main()

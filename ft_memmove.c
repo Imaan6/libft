@@ -6,11 +6,12 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 11:53:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/09 12:43:04 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:12:31 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	size_t	i;

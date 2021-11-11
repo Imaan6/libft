@@ -6,15 +6,15 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 20:45:16 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/07 12:18:51 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/11 17:17:28 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
+
 int	ft_tolower(int c)
 {
-	if(c > 64 &&  c < 91)
+	if (c > 64 && c < 91)
 	{
 		c += 32;
 		return (c);
