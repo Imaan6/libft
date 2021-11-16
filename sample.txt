@@ -5,4 +5,4 @@ new string followed by a newline
 new string followed by a newline
 new string followed by a newline
 new string followed by a newline
-new string followed by a newlinenew string followed by a newlinenew string followed by a newline
+new string followed by a newlinenew string followed by a newlinenew string followed by a newline42
