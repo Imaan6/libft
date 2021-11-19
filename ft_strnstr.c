@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:02:40 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/11 17:50:20 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/19 16:37:29 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (!ft_strncmp(haystack, "", ft_strlen(haystack))
 		&& !ft_strncmp(needle, "", ft_strlen(needle)))
 		return ("");
-	if (haystack == NULL)
+	if(!ft_strncmp(needle, "", ft_strlen(needle)))
+		return ((char *)haystack);
+/*	if (haystack == NULL)
 	{
 		return ((char *)(haystack));
-	}
+	}*/
 	while (haystack[i] && i < len)
 	{
 		j = 0;
@@ -39,13 +41,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+
 /*
 int main()
 {
-	char *haystack = "";
+	char *haystack = "oh no not the empty string !";
 	char *needle = "";
 
-	printf("%s\n",ft_strnstr(haystack, needle, 0));
-	printf("%s\n",strnstr(haystack, needle, 0));
+	printf("|%s|\n",ft_strnstr(haystack, needle, 420));
+	printf("|%s|\n",strnstr(haystack, needle, 420));
 }
 */

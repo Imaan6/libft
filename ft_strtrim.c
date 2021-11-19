@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 00:23:02 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/13 16:00:25 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:36:02 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	int	j;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
 	while(setchecker(set, s1[i]) && s1)
 		i++;
 	j = ft_strlen(s1) - 1;

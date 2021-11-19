@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 00:03:51 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/13 00:21:26 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:34:21 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ char *ft_strjoin(char const *s1, char const *s2)
 	int	i;
 	int	j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	len_new = len_s1 + len_s2;
-	new = (char*) malloc ((len_new + 1)*(sizeof(char)));
+	new = (char *) malloc (len_new * sizeof(char));
 	if (!new)
 		return (NULL);
 	i = 0;
@@ -42,7 +44,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	}
 	new[i] = '\0';
 	return (new);
-}/*
+}
+/*
 int main()
 {
 	char *s1 = "";

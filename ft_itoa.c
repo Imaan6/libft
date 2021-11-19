@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 18:26:27 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/14 15:48:02 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/19 17:31:57 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char    *ft_itoa(int n)
     nb = n;
 	if (n == 0)
       return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
     if (n < 0)
     {
       nb *= -1;
@@ -53,7 +55,5 @@ char    *ft_itoa(int n)
 }
 /*
 int main() {
-
-  printf("%s",ft_itoa(0));
-}
-*/
+	printf("%s",ft_itoa(-2147483648));
+}*/

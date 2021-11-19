@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:13:46 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/13 21:07:40 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/19 13:57:28 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
+/*
 int main()
 {
 	char s[] = "i";
@@ -39,4 +39,4 @@ int main()
 //	printf("%s\n", s);
 	memcpy(NULL, NULL, 2);
 	printf("%s\n", s);
-}
+}*/
