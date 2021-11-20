@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:02:40 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/20 23:15:14 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/20 23:31:31 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (len == 0 && !haystack && needle)
+		return (NULL);
 	i = 0;
 	if (!ft_strncmp(haystack, "", ft_strlen(haystack))
 		&& !ft_strncmp(needle, "", ft_strlen(needle)))
@@ -41,8 +43,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-
+/*
 int main()
 {
 	char *haystack = "oh no not the empty string !";
@@ -51,4 +52,4 @@ int main()
 	printf("|%s|\n",ft_strnstr(NULL, needle, 0));
 	//printf("|%s|\n",strnstr(NULL, needle, 0));
 }
-
+*/

@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 13:11:54 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/20 23:19:12 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/20 23:32:06 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t fdstsize)
 	else
 		return (src_len + fdstsize);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -44,4 +44,4 @@ int	main()
 	char txt2[] = "fiha n3ass";
 	printf ("%lu", ft_strlcat(NULL, "ggg",0));
 		return (0);
-}
+}*/
