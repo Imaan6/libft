@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 00:23:02 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/19 17:36:02 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:07:31 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	setchecker(const char *set, char c)
 	int	i;
 
 	i = 0;
-	while(set[i])
+	while (set[i])
 	{
 		if (set[i] == c)
 			return (1);
@@ -26,7 +26,7 @@ int	setchecker(const char *set, char c)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -34,13 +34,12 @@ char *ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	if (!s1)
 		return (NULL);
-	while(setchecker(set, s1[i]) && s1)
+	while (setchecker(set, s1[i]) && s1)
 		i++;
 	j = ft_strlen(s1) - 1;
-	while(setchecker(set, s1[j]))
+	while (setchecker(set, s1[j]))
 		j--;
 	return (ft_substr(s1, i, (j - i + 1)));
-
 }
 /*
 int main()

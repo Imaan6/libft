@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:12:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/20 23:07:51 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/21 15:33:58 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char **ft_split(char const *s, char c)
 	new[j] = NULL;
 	return (new);
 }
-
+/*
 int main()
 {
 	char	s[] = "+im+imane++++hey+you+++";
@@ -100,4 +100,4 @@ int main()
 		i++;
 	}
 	printf("%s\n", f[i]);
-}
+}*/

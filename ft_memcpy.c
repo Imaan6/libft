@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:13:46 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/19 13:57:28 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:06:59 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	s = (unsigned char *) src;
 	i = 0;
 	if (!dst && !src)
-		return(dst);
+		return (dst);
 	while (i < n)
 	{
 		d[i] = s[i];

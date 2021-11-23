@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:33:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/19 17:41:44 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:16:52 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,22 @@
 {
 	s[i] -= 32;
 }*/
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-		
-    int i;
+	int	i;
 
 	i = 0;
-	if(s != NULL && f != NULL)
+	if (s != NULL && f != NULL)
 	{
-		while(s[i])
+		while (s[i])
 		{
-			(*f)(i, s + i); // s + i == &s[i];
+			(*f)(i, s + i);
 			i++;
 		}
 	}
 }
 /*
+ * s + i == &s[i];
 int	main()
 {
 	//char *s = "imane";

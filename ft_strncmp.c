@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:13:49 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/19 16:00:46 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:32:52 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (n == 0)
 		return (0);
 	while (s1[i] != '\0' && s2[i] != '\0' && i < n - 1 && s1[i] == s2[i])
-	{
 		i++;
-	}
-	// for extended ascii
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 /*
+ * UNSIGNED CHAR FOR EXTENDED ASCII 
 int main()
 {
 	char *s2 = "Imane";

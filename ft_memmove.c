@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 11:53:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/13 21:09:27 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/22 15:07:30 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	src = (char *)s2;
 	i = 0;
 	j = n - 1;
-	if(!dst && !src)
+	if (!dst && !src)
 		return (dst);
 	if (dst > src)
 	{
