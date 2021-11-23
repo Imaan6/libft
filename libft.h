@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:54:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/23 14:00:07 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/23 23:08:54 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <unistd.h>
 # include <fcntl.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -28,6 +35,7 @@ int		ft_isprint(int c);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+t_list	*ft_lstnew(void *content);
 size_t	ft_strlcat(char *dst, const char *src, size_t fdstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
@@ -54,10 +62,4 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
 #endif
