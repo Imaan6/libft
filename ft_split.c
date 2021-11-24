@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:12:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/21 15:33:58 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 20:53:25 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,46 +37,59 @@ int	charcount(char const *s, char c, int i)
 
 	j = i;
 	count = 0;
-	while(s[j] != '\0' && s[j] == c)
+	while (s[j] != '\0' && s[j] == c)
 		j++;
-	while(s[j] && s[j] != c)
+	while (s[j] && s[j] != c)
 	{
 		j++;
 		count++;
 	}
 	return (count);
 }
-
-char **ft_split(char const *s, char c)
+char *s(char *s, int count, char *new, int k,)
 {
 	int	i;
-	int	j;
-	int	k;
-	char	**new;
-	int	count;
-	int count1;
 
-	count1 = wordcount((char *)s, c);
-	new = malloc ((count1+1) * sizeof(char*));
-	j = 0;
-	k = 0;
-	while(j < count1)
-	{
-		i = 0;
-		while(s[k])
+	i = 0;
+		while (s[k])
 		{
 			count = charcount(s, c, k);
-			new[j] = malloc((count + 1)  * sizeof(char));
-			while(s[k] != '\0' && s[k] == c)
+			new[j] = malloc(count + 1);
+			while (s[k] != '\0' && s[k] == c)
 				k++;
-			while (count > 0)
-			{
-				new[j][i] = s[k];
-				i++;
+			while (count > i)
+				new[j][i++] = s[k++];
+			if (s[k] == c)
+				break;
+		}
+}
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**new;
+	int		count;
+	int 	count1;
+
+	if (!s)
+		return (NULL);
+	count1 = wordcount((char *)s, c);
+	new = malloc((count1 + 1) * sizeof(char*));
+	j = 0;
+	k = 0;
+	while (j < count1)
+	{
+		i = 0;
+		while (s[k])
+		{
+			count = charcount(s, c, k);
+			new[j] = malloc(count + 1);
+			while (s[k] != '\0' && s[k] == c)
 				k++;
-				count--;
-			}
-			if(s[k] == c)
+			while (count > i)
+				new[j][i++] = s[k++];
+			if (s[k] == c)
 				break;
 		}
 		new[j][i] = '\0';
@@ -85,7 +98,7 @@ char **ft_split(char const *s, char c)
 	new[j] = NULL;
 	return (new);
 }
-/*
+
 int main()
 {
 	char	s[] = "+im+imane++++hey+you+++";
@@ -100,4 +113,5 @@ int main()
 		i++;
 	}
 	printf("%s\n", f[i]);
-}*/
+	system("leaks a.out");
+}
