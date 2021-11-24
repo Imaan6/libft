@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 21:07:23 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/11 17:53:42 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:23:11 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@ char	*ft_strdup(char *s1)
 
 	i = 0;
 	while (s1[i])
-	{
 		i++;
-	}
 	dup = malloc((i + 1) * sizeof (char));
 	if (dup == 0)
 		return (0);
-	dup[i + 1] = '\0';
+	dup[i] = '\0';
 	while (i >= 0)
 	{
 		dup[i] = s1[i];

@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:30:07 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/23 19:36:25 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:57:04 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 }*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int		i;
+	unsigned int	i;
 	char			*new;
 
 	i = 0;

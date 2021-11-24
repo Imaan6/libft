@@ -6,112 +6,114 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 18:12:34 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/24 20:53:25 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:42:00 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int wordcount(char *s, char c)
+int	checker_str(char sep, char c)
 {
-	int	count;
-	int	i;
+	if (sep == c)
+		return (1);
+	return (0);
+}
 
+int	ft_word_counter(char const *s, char sep)
+{
+	int	i;
+	int	c;
+
+	c = 0;
 	i = 0;
-	count = 0;
-	if(s[0] != c)
-		count++;
-	while(s[i])
+	if (!checker_str(sep, s[0]))
+		c = 1;
+	while (s[i])
 	{
-		if(s[i] == c && s[i+1] != c && s[i + 1] != '\0')
-			count++;
+		if (checker_str(sep, s[i])
+			&& !checker_str(sep, s[i + 1]) && s[i + 1] != '\0')
+			c++;
 		i++;
 	}
-	return (count);
+	return (c);
 }
 
-int	charcount(char const *s, char c, int i)
-{
-	int	j;
-	int	count;
-
-	j = i;
-	count = 0;
-	while (s[j] != '\0' && s[j] == c)
-		j++;
-	while (s[j] && s[j] != c)
-	{
-		j++;
-		count++;
-	}
-	return (count);
-}
-char *s(char *s, int count, char *new, int k,)
+int	ft_len_counter(char const *s, char sep)
 {
 	int	i;
+	int	c;
 
+	c = 0;
 	i = 0;
-		while (s[k])
-		{
-			count = charcount(s, c, k);
-			new[j] = malloc(count + 1);
-			while (s[k] != '\0' && s[k] == c)
-				k++;
-			while (count > i)
-				new[j][i++] = s[k++];
-			if (s[k] == c)
-				break;
-		}
+	while (checker_str(sep, s[i]) && s[i])
+		i++;
+	while (!checker_str(sep, s[i]) && s[i])
+	{
+		i++;
+		c++;
+	}
+	return (c);
 }
-char	**ft_split(char const *s, char c)
+
+char	*ft_put(char const *s, char sep)
 {
 	int		i;
 	int		j;
-	int		k;
-	char	**new;
-	int		count;
-	int 	count1;
+	char	*str;
+
+	i = 0;
+	j = ft_len_counter(s, sep);
+	str = malloc((j + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
+	while (s[i] && j > 0)
+	{
+		str[i] = (char)s[i];
+		i++;
+		j--;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int			word;
+	char		**new;
+	int			i;
+	int			j;
 
 	if (!s)
 		return (NULL);
-	count1 = wordcount((char *)s, c);
-	new = malloc((count1 + 1) * sizeof(char*));
+	word = ft_word_counter(s, c);
+	new = malloc(sizeof(char *) * ((word) + 1));
+	if (!new)
+		return (0);
+	i = 0;
 	j = 0;
-	k = 0;
-	while (j < count1)
+	while (s[i])
 	{
-		i = 0;
-		while (s[k])
+		while (checker_str(s[i], c) && s[i])
+			i++;
+		if (!checker_str(s[i], c) && s[i])
 		{
-			count = charcount(s, c, k);
-			new[j] = malloc(count + 1);
-			while (s[k] != '\0' && s[k] == c)
-				k++;
-			while (count > i)
-				new[j][i++] = s[k++];
-			if (s[k] == c)
-				break;
+			new[j++] = ft_put(s + i, c);
+			i += ft_len_counter(s + i, c);
 		}
-		new[j][i] = '\0';
-		j++;
 	}
 	new[j] = NULL;
 	return (new);
 }
-
-int main()
+/*
+int    main(void)
 {
-	char	s[] = "+im+imane++++hey+you+++";
-	char	**f;
-	char	c = '+';
-	int i;
-	i = 0;
-	f = ft_split(s, c);
-	while(f[i])
+	int i = 0;	char p[] = "sadasdas + dsadas d + dsad  ";
+	char **tab = ft_split("olol					 ", ' ');
+	while (tab[i])
 	{
-		printf("|%s|\n", f[i]);
+		printf("|%s|\n", tab[i]);
 		i++;
 	}
-	printf("%s\n", f[i]);
-	system("leaks a.out");
-}
+	printf("|%s|\n", tab[i]);
+	return (0);
+}*/

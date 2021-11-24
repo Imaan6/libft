@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 00:03:51 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/24 21:05:17 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:46:31 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
-	int		i;
+	size_t	i;
 	int		j;
 
 	if (!s1 || !s2)
 		return (NULL);
-	new = (char *) malloc ((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	new = (char *) malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!new)
 		return (NULL);
 	i = 0;

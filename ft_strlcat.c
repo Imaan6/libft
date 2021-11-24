@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 13:11:54 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/20 23:32:06 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:33:43 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t fdstsize)
 	size_t	dst_len;
 
 	src_len = ft_strlen(src);
-	if (fdstsize == 0)
+	if ((fdstsize == 0 && !dst) || fdstsize == 0)
 		return (src_len);
 	dst_len = ft_strlen(dst);
+	if (fdstsize < dst_len)
+		return (src_len + fdstsize);
 	i = 0;
-	while (src[i] != '\0' && i + dst_len < (fdstsize - 1))
+	while (src[i] && (i + dst_len) < (fdstsize - 1))
 	{
 		dst[i + dst_len] = src[i];
 		i++;

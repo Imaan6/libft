@@ -6,26 +6,26 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:33:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/23 19:37:15 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:45:55 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*void	upper(unsigned int i, char *s)
+/*
+void	upper(unsigned int i, char *s)
 {
-	s[i] -= 32;
+	s[i] += i;
 }*/
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	if (s != NULL && f != NULL)
 	{
 		while (s[i])
 		{
-			(*f)(i, s);
+			f(i, &s[i]);
 			i++;
 		}
 	}
@@ -34,9 +34,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 int	main()
 {
 	//char *s = "imane";
-	char s[10] = "imane";
+	char s[] = "0000000000";
 	//s[0] = 'e';
 	//printf("%s", s);
-ft_striteri(s, upper);
+	ft_striteri(s, upper);
 	printf("%s", s);
+	return (0);
 }*/

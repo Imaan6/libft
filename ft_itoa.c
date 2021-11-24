@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:02:09 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/22 15:06:03 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 22:21:14 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
-	res[len + 1] = '\0';
+	res[len] = '\0';
 	len--;
 	if (n < 0)
 	{
@@ -61,4 +61,5 @@ char	*ft_itoa(int n)
 /*
 int main() {
 	printf("%s",ft_itoa(-2147));
-}*/
+}
+*/
