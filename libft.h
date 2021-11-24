@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:54:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/23 23:08:54 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/24 00:13:45 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -62,4 +61,6 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
 #endif
