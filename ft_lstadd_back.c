@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:08:12 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/24 18:58:18 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/25 08:03:11 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list current;
+	t_list *current;
 
-	current = **lst;
+	current = *lst;
+	if(!new)
+		return;
 	while(current->next)
 	{
 		current = current->next;
 	}
 	current->next = new;
 }
+/*
 void display(t_list *lst)
 {
 	t_list *curr = lst;
 	while (curr)
 	{
-		printf("%s-->", curr->content);
+		printf("%s-->\n", curr->content);
 		curr = curr->next;
 	}
 	printf("NULL");
@@ -40,14 +43,12 @@ int main()
 	t_list	*new2 = ft_lstnew("second");
 	t_list	*new3 = ft_lstnew("third");
 	t_list	*new4 = ft_lstnew("fourth");
-	ft_lstadd_front(&head, new1);
-	ft_lstadd_front(&head, new2);
-	ft_lstadd_front(&head, new3);
-	ft_lstadd_front(&head, new4);
-	t_list	this = ft_lstnew("Im at the last pos");
-	ft_lstadd_back(&head, this);
+	//ft_lstadd_front(&head, new1);
+	//ft_lstadd_front(&head, new2);
+	//ft_lstadd_front(&head, new3);
+	///ft_lstadd_front(&head, new4);
+	t_list	*this = ft_lstnew("Im at the last pos");
+	//ft_lstadd_back(&head, this);
+	ft_lstadd_back(&head, NULL);
 	display(head);
-/*	t_list	*ptr;
-	ptr = ft_lstlast(head);
-	printf("%s", (char *)ptr->content);*/
-}
+}*/
