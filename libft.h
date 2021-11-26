@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:54:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/26 07:40:35 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:39:45 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,9 @@ char	**ft_split(char const *s, char c);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+t_list	*ft_lstlast(t_list *lst);
+void ft_lstdelone(t_list *lst, void (*del)(void*));
 
 #endif

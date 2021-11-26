@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:08:12 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/25 08:03:11 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/26 19:14:22 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,19 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	t_list *current;
 
 	current = *lst;
-	if(!new)
-		return;
-	while(current->next)
+	if(lst)
 	{
-		current = current->next;
+		if(!(*lst))
+		{
+			*lst = new;
+			return ;
+		}
+		while(current->next)
+		{
+			current = current->next;
+		}
+		current->next = new;
 	}
-	current->next = new;
 }
 /*
 void display(t_list *lst)
