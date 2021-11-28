@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:04:06 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/25 07:50:54 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/28 19:42:00 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*head;
 	t_list	*new;
 
+	if (!content)
+		return (NULL);
 	head = NULL;
 	new = (t_list*)malloc(sizeof(t_list));
 	if(!new)

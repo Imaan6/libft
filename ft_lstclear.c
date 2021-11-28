@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:26:57 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/27 08:47:43 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/28 19:39:26 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		(*lst) = NULL;
 	}
 }
-/*
-void display(t_list *lst)
+
+/*void display(t_list *lst)
 {
 	t_list *curr = lst;
 	while (curr)
@@ -57,6 +57,6 @@ int main()
 	ft_lstadd_front(&head, new4);
 	display(head);
 	printf("\n");
-	ft_lstclear(&new3, del);
-	display(head);
+	ft_lstclear(&new2, free);
+	display(new3);
 }*/

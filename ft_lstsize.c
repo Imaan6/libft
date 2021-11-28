@@ -6,7 +6,7 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 23:50:37 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/24 14:20:06 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/28 19:42:40 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ int ft_lstsize(t_list *lst)
 
 	counter = 0;
 	current = lst;
-	while(current)
+	if(lst)
 	{
-		current = current->next;
-		counter++;
+		while(current)
+		{
+			current = current->next;
+			counter++;
+		}
 	}
 	return (counter);
 }
