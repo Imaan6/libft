@@ -6,16 +6,16 @@
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 07:29:38 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/26 10:40:51 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/27 08:47:27 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	del(void *content)
+/*void	del(void *content)
 {
 	free(content);
-}
+}*/
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {

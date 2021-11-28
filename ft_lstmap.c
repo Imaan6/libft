@@ -1,39 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 11:26:57 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/27 08:47:43 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/11/27 07:37:41 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/11/28 18:09:09 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*void	del(void *data)
+/*void	*change(void *data)
 {
-	free(data);
+	data = strdup("changed");
+	return data;
+}
+
+void	del(void *content)
+{
+	free(content);
 }*/
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 {
-	t_list *curr;
-	if ((*lst) || del)
+	t_list	*curr;
+	t_list	*new;
+	t_list	*var;
+
+	new = NULL;
+	curr = lst;
+	while(curr)
 	{
-		while (*lst)
+		var = ft_lstnew((*f)(curr->content));
+		if(!var)
 		{
-			curr = (*lst)->next;
-			(*del)((*lst)->content);
-			free(*lst);
-			(*lst) = curr;
+			ft_lstclear(&var, del);
+			return NULL;
 		}
-		(*lst) = NULL;
+		ft_lstadd_back(&new, var);
+		curr = curr->next;
 	}
+	return (new);
 }
-/*
-void display(t_list *lst)
+
+/*void display(t_list *lst)
 {
 	t_list *curr = lst;
 	while (curr)
@@ -57,6 +69,6 @@ int main()
 	ft_lstadd_front(&head, new4);
 	display(head);
 	printf("\n");
-	ft_lstclear(&new3, del);
-	display(head);
+	display(ft_lstmap(head, change, del));
+	//display(head);
 }*/
