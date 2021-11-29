@@ -6,18 +6,15 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 13:54:55 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/28 18:10:21 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/28 22:23:36 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -70,6 +67,5 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
 
 #endif

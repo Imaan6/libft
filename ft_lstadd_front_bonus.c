@@ -6,7 +6,7 @@
 /*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:36:45 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/23 23:32:58 by iel-moha         ###   ########.fr       */
+/*   Updated: 2021/11/28 21:02:58 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 // 	return (new);
 // }
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	(*new).next = *lst;
 	*lst = new;

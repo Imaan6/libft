@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 11:26:57 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/28 19:39:26 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/11/26 07:29:38 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/11/28 21:05:07 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*void	del(void *data)
+/*void	del(void *content)
 {
-	free(data);
+	free(content);
 }*/
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	t_list *curr;
-	if ((*lst) || del)
-	{
-		while (*lst)
-		{
-			curr = (*lst)->next;
-			(*del)((*lst)->content);
-			free(*lst);
-			(*lst) = curr;
-		}
-		(*lst) = NULL;
-	}
+	if (lst || del)
+		(*del)(lst->content);
+	free(lst);
 }
 
 /*void display(t_list *lst)
@@ -57,6 +48,8 @@ int main()
 	ft_lstadd_front(&head, new4);
 	display(head);
 	printf("\n");
-	ft_lstclear(&new2, free);
-	display(new3);
+	ft_lstdelone(new3, del);
+	ft_lstdelone(new2, del);
+	ft_lstdelone(new1, del);
+	display(head);
 }*/

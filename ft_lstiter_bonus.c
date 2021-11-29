@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 07:29:38 by iel-moha          #+#    #+#             */
-/*   Updated: 2021/11/27 08:47:27 by iel-moha         ###   ########.fr       */
+/*   Created: 2021/11/27 06:45:17 by iel-moha          #+#    #+#             */
+/*   Updated: 2021/11/28 21:03:41 by iel-moha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*void	del(void *content)
+/*void	first_char(void *data)
 {
-	free(content);
+	((char *)data)[0] = 'z';
 }*/
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-		if(lst || del)
-			(*del)(lst->content);
-		free(lst);
+	if (lst == NULL)
+		return ;
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }
-
-/*void display(t_list *lst)
+/*
+void display(t_list *lst)
 {
 	t_list *curr = lst;
 	while (curr)
@@ -34,7 +38,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	}
 	printf("NULL");
 }
-
 int main()
 {
 	t_list	*head= NULL;
@@ -47,9 +50,6 @@ int main()
 	ft_lstadd_front(&head, new3);
 	ft_lstadd_front(&head, new4);
 	display(head);
-	printf("\n");
-	ft_lstdelone(new3, del);
-	ft_lstdelone(new2, del);
-	ft_lstdelone(new1, del);
+	ft_lstiter(head, first_char);
 	display(head);
 }*/

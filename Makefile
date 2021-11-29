@@ -3,38 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: iel-moha <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: iel-moha <iel-moha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 21:25:02 by iel-moha          #+#    #+#              #
-#    Updated: 2021/11/28 19:12:19 by iel-moha         ###   ########.fr        #
+#    Updated: 2021/11/29 13:25:52 by iel-moha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = libft.a
 CC = gcc
-OBJS = ${SRC:.c=.o}
+NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
-ARG = -c
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
-	ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_split.c \
-	ft_putnbr_fd.c ft_putstr_fd.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
-	ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
-	 ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c
+SRCBNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcpy.c ft_memmove.c ft_memset.c ft_split.c ft_strlen.c ft_tolower.c ft_toupper.c ft_strchr.c ft_strrchr.c ft_memcmp.c ft_strlcpy.c ft_strncmp.c ft_strlcat.c ft_calloc.c ft_strnstr.c ft_strdup.c ft_substr.c ft_itoa.c ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-all : $(NAME)
-$(NAME): $(OBJS)
-	ar -rc $(NAME) $(OBJS)
+OBJBNS = $(SRCBNS:.c=.o)
 
-$(OBJS):
-	$(CC) $(FLAGS) $(SRC) $(ARG)
+OBJSRC = $(SRC:.c=.o)
 
-bonus : $(BONUS)
+all: $(NAME)
 
-clean : 
-	rm -f $(OBJS)
+$(NAME): $(OBJSRC)
+	ar -rc $(NAME) $(OBJSRC)
 
-fclean : clean
-	rm -f $(NAME)
+$(OBJSRC): $(SRC)
+	$(CC) $(FLAGS) -c $(SRC)
+
+$(OBJBNS): $(SRCBNS)
+	$(CC) $(FLAGS) -c $(SRCBNS)
+	ar -rc $(NAME) $(OBJBNS)
+
+bonus: $(NAME) $(OBJBNS)
+
+clean:
+	rm -rf $(OBJBNS) $(OBJSRC)
+
+fclean: clean
+	rm -rf $(NAME)
 
 re: fclean all
